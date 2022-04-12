@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charts</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="stylechart.css">
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1>E-coffee</h1>
+        <ul class="navbar">
+            <li><a href="simulador.html">Simulador</a></li>
+            <li><a href="index.html">Log out</a></li>
+
+        </ul>
+    </div>
+    </div>
+    <div class="container">
+        <div>
+            <canvas id="chartHumidade" style="position: relative; height:40vh; width:40vw"></canvas>
+        </div>
+        <div>
+            <canvas id="chartTemperatura" style="position: relative; height:40vh; width:40vw"></canvas>
+        </div>
+    </div>
+</body>
+
+<script>
+    const labels = [
+      '2:00', 
+      '6:00',
+      '10:00',
+      '14:00',
+      '18:00',
+      '22:00',
+    ];
+
+    const labels2 = [
+      '2:00', 
+      '6:00',
+      '10:00',
+      '14:00',
+      '18:00',
+      '22:00',
+    ];
+  
+    const data = {
+      labels: labels,
+      datasets: [{
+        label: 'Humidade',
+        backgroundColor: 'rgb(0, 0, 255)',
+        borderColor: 'rgb(0, 0, 255)',
+        data: [0, 10, 5, 2, 20, 30],
+      }]
+    };
+
+    const data2 = {
+      labels: labels2,
+      datasets: [{
+        label: 'Temperatura',
+        backgroundColor: 'rgb(255, 0, 0)',
+        borderColor: 'rgb(255, 0, 0)',
+        data: [0, 10, 5, 2, 20, 30],
+      }]
+    };
+  
+    const config = {
+      type: 'line',
+      data: data,
+      options: {}
+    };
+
+    const config2 = {
+      type: 'line',
+      data: data2,
+      options: {}
+    };
+  </script>
+
+<script>
+    const myChart = new Chart(
+      document.getElementById('chartHumidade'),
+      config
+    );
+
+    const myChart2 = new Chart(
+      document.getElementById('chartTemperatura'),
+      config2
+    );
+  </script>
+
+</html>
